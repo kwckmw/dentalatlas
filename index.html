@@ -4580,6 +4580,13 @@ button[role="switch"][data-state="checked"] > span,
 button[role="switch"][data-state="checked"] [data-state]{transform:translateX(20px) !important}
 button[role="switch"]:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
 button[role="switch"]:disabled{opacity:.5;cursor:not-allowed}
+/* 셀렉트(분류 선택 등): 모바일에서 글자가 잘리지 않도록 높이 확보 */
+@media (max-width: 767px) {
+  #root select, #root [data-slot="select-trigger"], #root button[role="combobox"]{
+    height:auto !important;min-height:42px !important;line-height:1.4 !important;
+    padding-top:9px !important;padding-bottom:9px !important;box-sizing:border-box;
+  }
+}
 /* 체크박스/라디오 */
 input[type="checkbox"], input[type="radio"] { border-radius: 3px !important; }
 /* 변이·이상: 분류 버튼 — 모바일에서 3개 + 2개로 깔끔하게 줄바꿈(고아 버튼 방지) */
